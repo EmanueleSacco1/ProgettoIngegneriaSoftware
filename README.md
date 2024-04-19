@@ -1,5 +1,5 @@
 # Progetto ingegneria del Software
-**Autori: Sacco Emanuele, Mazzeo Alessandro, Edoardo Di Nicolò, Alessandro Angelucci**
+**Autori: Sacco Emanuele, Mazzeo Alessandro, Di Nicolò Edoardo, Angelucci Alessandro**
 
 Nella seguente repository sono visualizzabili:
 - Tesina in formato .pdf
