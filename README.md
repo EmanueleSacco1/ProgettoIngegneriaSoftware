@@ -1,4 +1,4 @@
-# Progetto ingegneria del Software
+# Progetto esame ingegneria del Software
 **Autori: Sacco Emanuele, Mazzeo Alessandro, Di Nicolò Edoardo, Angelucci Alessandro**
 
 Nella seguente repository sono visualizzabili:
