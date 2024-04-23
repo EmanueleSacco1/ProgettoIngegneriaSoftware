@@ -4,4 +4,4 @@
 Nella seguente repository sono visualizzabili:
 - Tesina in formato .pdf
 - Progettazione in EA
-- Implementazione in Python 
+- Implementazione del codice in Python 
