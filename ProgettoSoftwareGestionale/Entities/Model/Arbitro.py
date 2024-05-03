@@ -21,14 +21,6 @@ class Arbitro(Utente):
         with open('Data/arbitri.pickle', 'wb') as f:
             pickle.dump(lista, f)
 
-    def aggiungi_arbitro(self, anzianità, cellulare, codicefiscale, codicemeccanografico, cognome, cra, datanascita,
-                 email, nome, password, qualifica, sezioneaia):
-        super().aggiungiUtente(anzianità, cellulare, codicefiscale, codicemeccanografico, cognome, cra, datanascita,
-                 email, nome, password, qualifica, sezioneaia)
-
-        lista_arbitri_salvata = self._load()
-        lista_arbitri_salvata.append(self.get_info_arbitri())
-        self._save(lista_arbitri_salvata)
 
     def get_info_arbitro(self):
         info = super().get_info_utente()
@@ -50,27 +42,3 @@ class Arbitro(Utente):
             arbitro_dict["sezioneaia"]
         )
 
-    def ricerca_utente_codicemeccanografico(self, codicemeccanografico):
-        lista_arbitri_salvata = self._load()
-        for arbitro_dict in lista_arbitri_salvata:
-            if arbitro_dict["codicemeccanografico"] == codicemeccanografico:
-                return self._from_dict(arbitro_dict)
-        return None
-
-    def ricerca_utente_nomecognome(self, nome, cognome):
-        lista_arbitri_salvata = self._load()
-        for arbitro_dict in lista_arbitri_salvata:
-            if arbitro_dict["nome"] == nome and arbitro_dict["cognome"] == cognome:
-                return self._from_dict(arbitro_dict)
-        return None
-
-    def rimuovi_arbitro(self):
-        lista_arbitri_salvata = self._load()
-        for arbitro in lista_arbitri_salvata:
-            if arbitro["codicemeccanografico"] == self.codicemeccanografico:
-                lista_arbitri_salvata.remove(arbitro)
-                break
-        self._save(lista_arbitri_salvata)
-
-        super().rimuovi_utente()
-        del self
