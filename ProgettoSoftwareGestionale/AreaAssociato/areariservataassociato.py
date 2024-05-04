@@ -1,3 +1,4 @@
+#area riservata associato
 from PyQt6 import QtCore, QtGui, QtWidgets
 
 
@@ -50,7 +51,7 @@ class Ui_Form(object):
         self.pushButton_4.setText(_translate("Form", "Scarica modulo referto"))
         self.pushButton_5.setText(_translate("Form", "Carica modulo referto"))
         self.pushButton_6.setText(_translate("Form", "Carica certificato medico"))
-
+        #TODO:chiedere se va bene la disposizione di areariservataamministratore.py e areariservatassociato.py
 
 if __name__ == "__main__":
     import sys

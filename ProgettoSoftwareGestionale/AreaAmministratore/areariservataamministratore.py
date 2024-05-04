@@ -1,3 +1,4 @@
+#area riservata amministratore
 from PyQt6 import QtCore, QtGui, QtWidgets
 
 
