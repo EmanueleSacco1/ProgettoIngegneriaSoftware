@@ -49,12 +49,12 @@ class Ui_Form(object):
     def retranslateUi(self, Form):
         _translate = QtCore.QCoreApplication.translate
         Form.setWindowTitle(_translate("Form", "Form"))
-        self.btnaccedi.setText(_translate("Form", "Accedi"))
-        self.pushButton.setText(_translate("Form", "Cancella"))
+        self.btnaccedi.setText(_translate("Form", "Accedi")) # bottone accedi, il sistema dovrà verificare l'autenticità delle credenziali
+        self.pushButton.setText(_translate("Form", "Cancella")) # serve per pulire le caselle di testo
         self.label.setText(_translate("Form", "ACCEDI ALL\'AERA RISERVATA"))
         self.label_2.setText(_translate("Form", "Codice meccanografico:"))
         self.label_3.setText(_translate("Form", "Password:"))
-
+        #il sistema visualizzarà o l'area riservata all'amministratore o quella riservata all'associato
 
 if __name__ == "__main__":
     import sys
