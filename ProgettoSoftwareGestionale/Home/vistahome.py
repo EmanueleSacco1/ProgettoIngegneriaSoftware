@@ -1,3 +1,4 @@
+#schermata che visualizza l'utente quando vuole accedere al sistema
 from PyQt6 import QtCore, QtGui, QtWidgets
 
 
