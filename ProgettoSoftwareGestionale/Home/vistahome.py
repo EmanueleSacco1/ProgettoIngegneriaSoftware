@@ -7,7 +7,7 @@ class Ui_Form(object):
         Form.setObjectName("Form")
         Form.resize(767, 428)
         self.btnaccedi = QtWidgets.QPushButton(parent=Form)
-        self.btnaccedi.setGeometry(QtCore.QRect(160, 260, 161, 28))
+        self.btnaccedi.setGeometry(QtCore.QRect(160, 260, 161, 28)) #(x,y,larghezza,altezza)
         self.btnaccedi.setObjectName("btnaccedi")
         self.pushButton = QtWidgets.QPushButton(parent=Form)
         self.pushButton.setGeometry(QtCore.QRect(420, 260, 161, 28))
