@@ -1,13 +1,13 @@
 #schermata che visualizza l'utente quando vuole accedere al sistema
 from PyQt6 import QtCore, QtGui, QtWidgets
-
+from PyQt6.QtWidgets import QApplication
 
 class Ui_Form(object):
     def setupUi(self, Form):
         Form.setObjectName("Form")
         Form.resize(767, 428)
         self.btnaccedi = QtWidgets.QPushButton(parent=Form)
-        self.btnaccedi.setGeometry(QtCore.QRect(160, 260, 161, 28)) #(x,y,larghezza,altezza)
+        self.btnaccedi.setGeometry(QtCore.QRect(160, 260, 161, 28))  # (x,y,larghezza,altezza)
         self.btnaccedi.setObjectName("btnaccedi")
         self.pushButton = QtWidgets.QPushButton(parent=Form)
         self.pushButton.setGeometry(QtCore.QRect(420, 260, 161, 28))
@@ -46,15 +46,21 @@ class Ui_Form(object):
         self.retranslateUi(Form)
         QtCore.QMetaObject.connectSlotsByName(Form)
 
+        # Centra la finestra sullo schermo
+        qr = Form.frameGeometry()
+        cp = QApplication.primaryScreen().availableGeometry().center()
+        qr.moveCenter(cp)
+        Form.move(qr.topLeft())
+
     def retranslateUi(self, Form):
         _translate = QtCore.QCoreApplication.translate
         Form.setWindowTitle(_translate("Form", "Form"))
-        self.btnaccedi.setText(_translate("Form", "Accedi")) # bottone accedi, il sistema dovrà verificare l'autenticità delle credenziali
-        self.pushButton.setText(_translate("Form", "Cancella")) # serve per pulire le caselle di testo
-        self.label.setText(_translate("Form", "ACCEDI ALL\'AERA RISERVATA"))
+        self.btnaccedi.setText(
+            _translate("Form", "Accedi"))  # bottone accedi, il sistema dovrà verificare l'autenticità delle credenziali
+        self.pushButton.setText(_translate("Form", "Cancella"))  # serve per pulire le caselle di testo
+        self.label.setText(_translate("Form", "ACCEDI ALL\'AREA RISERVATA"))
         self.label_2.setText(_translate("Form", "Codice meccanografico:"))
         self.label_3.setText(_translate("Form", "Password:"))
-        #il sistema visualizzarà o l'area riservata all'amministratore o quella riservata all'associato
 
 if __name__ == "__main__":
     import sys
