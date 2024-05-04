@@ -3,7 +3,7 @@ from PyQt6 import QtCore, QtGui, QtWidgets
 
 class Ui_Form(object):
     def setupUi(self, Form):
-        Form.setObjectName("AreaRiservataAssociato")
+        Form.setObjectName("Form")
         Form.resize(890, 562)
         self.label = QtWidgets.QLabel(parent=Form)
         self.label.setGeometry(QtCore.QRect(480, 40, 55, 16))
@@ -31,8 +31,11 @@ class Ui_Form(object):
         self.pushButton_4.setGeometry(QtCore.QRect(460, 230, 180, 90))
         self.pushButton_4.setObjectName("pushButton_4")
         self.pushButton_5 = QtWidgets.QPushButton(parent=Form)
-        self.pushButton_5.setGeometry(QtCore.QRect(350, 360, 180, 90))
+        self.pushButton_5.setGeometry(QtCore.QRect(240, 360, 180, 90))
         self.pushButton_5.setObjectName("pushButton_5")
+        self.pushButton_6 = QtWidgets.QPushButton(parent=Form)
+        self.pushButton_6.setGeometry(QtCore.QRect(460, 360, 180, 90))
+        self.pushButton_6.setObjectName("pushButton_6")
 
         self.retranslateUi(Form)
         QtCore.QMetaObject.connectSlotsByName(Form)
@@ -46,6 +49,7 @@ class Ui_Form(object):
         self.pushButton_3.setText(_translate("Form", "Accettazione gara"))
         self.pushButton_4.setText(_translate("Form", "Scarica modulo referto"))
         self.pushButton_5.setText(_translate("Form", "Carica modulo referto"))
+        self.pushButton_6.setText(_translate("Form", "Carica certificato medico"))
 
 
 if __name__ == "__main__":
