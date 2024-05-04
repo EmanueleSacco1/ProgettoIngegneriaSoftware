@@ -1,5 +1,7 @@
 from PyQt6 import QtCore, QtGui, QtWidgets
-from PyQt6.QtWidgets import QApplication
+from PyQt6.QtCore import Qt
+from PyQt6.QtWidgets import QApplication, QWidget
+
 
 class Ui_Form(object):
     def setupUi(self, Form):
@@ -66,11 +68,19 @@ class Ui_Form(object):
         self.label_2.setText(_translate("Form", "Codice meccanografico:"))
         self.label_3.setText(_translate("Form", "Password:"))
 
+class MyWidget(QWidget):
+    def __init__(self, parent=None):
+        super(MyWidget, self).__init__(parent)
+        self.ui = Ui_Form()
+        self.ui.setupUi(self)
+
+    def keyPressEvent(self, event):
+        if event.key() == Qt.Key.Key_Escape:
+            self.close()
+
 if __name__ == "__main__":
     import sys
     app = QtWidgets.QApplication(sys.argv)
-    Form = QtWidgets.QWidget()
-    ui = Ui_Form()
-    ui.setupUi(Form)
-    Form.show()
+    Form = MyWidget()
+    Form.showFullScreen()
     sys.exit(app.exec())
