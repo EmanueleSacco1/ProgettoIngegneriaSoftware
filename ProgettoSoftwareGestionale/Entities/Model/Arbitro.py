@@ -3,12 +3,14 @@ import pickle
 
 from Utente import Utente
 
+
 class Arbitro(Utente):
 
-    def __init__(self, anzianità=None, cellulare=None, codicefiscale=None, codicemeccanografico=None, cognome=None, cra=None, datanascita=None,
+    def __init__(self, anzianità=None, cellulare=None, codicefiscale=None, codicemeccanografico=None, cognome=None,
+                 cra=None, datanascita=None,
                  email=None, nome=None, password=None, qualifica=None, sezioneaia=None):
-        super(Arbitro, self).__init__(anzianità, cellulare, codicefiscale, codicemeccanografico, cognome, cra, datanascita,
-                 email, nome, password, qualifica, sezioneaia)
+        super(Arbitro, self).__init__(anzianità, cellulare, codicefiscale, codicemeccanografico, cognome, cra,
+                                      datanascita, email, nome, password, qualifica, sezioneaia)
 
     def _load(self):
         lista_arbitri_salvata = []
@@ -20,7 +22,6 @@ class Arbitro(Utente):
     def _save(self, lista):
         with open('Data/arbitri.pickle', 'wb') as f:
             pickle.dump(lista, f)
-
 
     def get_info_arbitro(self):
         info = super().get_info_utente()
@@ -41,4 +42,3 @@ class Arbitro(Utente):
             arbitro_dict["qualifica"],
             arbitro_dict["sezioneaia"]
         )
-

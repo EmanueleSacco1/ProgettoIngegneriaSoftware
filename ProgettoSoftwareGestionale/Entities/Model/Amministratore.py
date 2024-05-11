@@ -2,16 +2,16 @@ import os
 import pickle
 
 from ProgettoSoftwareGestionale.Entities.Model import Utente
-from ProgettoSoftwareGestionale.Entities.Model import Arbitro
-from ProgettoSoftwareGestionale.Entities.Model import Assistente
-from ProgettoSoftwareGestionale.Entities.Model import Osservatore
+
 
 class Amministratore(Utente):
 
-    def __init__(self, anzianità=None, cellulare=None, codicefiscale=None, codicemeccanografico=None, cognome=None, cra=None, datanascita=None,
+    def __init__(self, anzianità=None, cellulare=None, codicefiscale=None, codicemeccanografico=None, cognome=None,
+                 cra=None, datanascita=None,
                  email=None, nome=None, password=None, qualifica=None, sezioneaia=None):
-        super(Amministratore, self).__init__(anzianità, cellulare, codicefiscale, codicemeccanografico, cognome, cra, datanascita,
-                 email, nome, password, qualifica, sezioneaia)
+        super(Amministratore, self).__init__(anzianità, cellulare, codicefiscale, codicemeccanografico, cognome, cra,
+                                             datanascita,
+                                             email, nome, password, qualifica, sezioneaia)
 
     def _load(self):
         lista_amministratori_salvata = []
@@ -24,10 +24,11 @@ class Amministratore(Utente):
         with open('../Data/amministratori.pickle', 'wb') as f:
             pickle.dump(lista, f)
 
-    def aggiungi_amministratore(self, anzianità, cellulare, codicefiscale, codicemeccanografico, cognome, cra, datanascita,
-                 email, nome, password, qualifica, sezioneaia):
+    def aggiungi_amministratore(self, anzianità, cellulare, codicefiscale, codicemeccanografico, cognome, cra,
+                                datanascita,
+                                email, nome, password, qualifica, sezioneaia):
         super().aggiungiUtente(anzianità, cellulare, codicefiscale, codicemeccanografico, cognome, cra, datanascita,
-                 email, nome, password, qualifica, sezioneaia)
+                               email, nome, password, qualifica, sezioneaia)
 
         lista_amministratori_salvata = self._load()
         lista_amministratori_salvata.append(self.get_info_amministratore())
@@ -79,13 +80,14 @@ class Amministratore(Utente):
         return None
 
     def aggiungi_arbitro(self, anzianità, cellulare, codicefiscale, codicemeccanografico, cognome, cra, datanascita,
-                 email, nome, password, qualifica, sezioneaia):
+                         email, nome, password, qualifica, sezioneaia):
         super().aggiungiUtente(anzianità, cellulare, codicefiscale, codicemeccanografico, cognome, cra, datanascita,
-                 email, nome, password, qualifica, sezioneaia)
+                               email, nome, password, qualifica, sezioneaia)
 
         lista_arbitri_salvata = self._load()
         lista_arbitri_salvata.append(self.get_info_arbitri())
         self._save(lista_arbitri_salvata)
+
     def ricerca_arbitro_codicemeccanografico(self, codicemeccanografico):
         lista_arbitri_salvata = self._load()
         for arbitro_dict in lista_arbitri_salvata:
@@ -111,14 +113,16 @@ class Amministratore(Utente):
         super().rimuovi_utente()
         del self
 
+
 def aggiungi_assistente(self, anzianità, cellulare, codicefiscale, codicemeccanografico, cognome, cra, datanascita,
-             email, nome, password, qualifica, sezioneaia):
+                        email, nome, password, qualifica, sezioneaia):
     super().aggiungiUtente(anzianità, cellulare, codicefiscale, codicemeccanografico, cognome, cra, datanascita,
-             email, nome, password, qualifica, sezioneaia)
+                           email, nome, password, qualifica, sezioneaia)
 
     lista_assistenti_salvata = self._load()
     lista_assistenti_salvata.append(self.get_info_assistenti())
     self._save(lista_assistenti_salvata)
+
 
 def ricerca_assistente_codicemeccanografico(self, codicemeccanografico):
     lista_assistenti_salvata = self._load()
@@ -127,12 +131,14 @@ def ricerca_assistente_codicemeccanografico(self, codicemeccanografico):
             return self._from_dict(assistente_dict)
     return None
 
+
 def ricerca_assistente_nomecognome(self, nome, cognome):
     lista_assistenti_salvata = self._load()
     for assistente_dict in lista_assistenti_salvata:
         if assistente_dict["nome"] == nome and assistente_dict["cognome"] == cognome:
             return self._from_dict(assistente_dict)
     return None
+
 
 def rimuovi_assistente(self):
     lista_assistenti_salvata = self._load()
@@ -145,14 +151,16 @@ def rimuovi_assistente(self):
     super().rimuovi_utente()
     del self
 
+
 def aggiungi_osservatore(self, anzianità, cellulare, codicefiscale, codicemeccanografico, cognome, cra, datanascita,
-             email, nome, password, qualifica, sezioneaia):
+                         email, nome, password, qualifica, sezioneaia):
     super().aggiungiUtente(anzianità, cellulare, codicefiscale, codicemeccanografico, cognome, cra, datanascita,
-             email, nome, password, qualifica, sezioneaia)
+                           email, nome, password, qualifica, sezioneaia)
 
     lista_osservatori_salvata = self._load()
     lista_osservatori_salvata.append(self.get_info_osservatori())
     self._save(lista_osservatori_salvata)
+
 
 def ricerca_osservatore_codicemeccanografico(self, codicemeccanografico):
     lista_osservatori_salvata = self._load()
@@ -161,12 +169,14 @@ def ricerca_osservatore_codicemeccanografico(self, codicemeccanografico):
             return self._from_dict(osservatore_dict)
     return None
 
+
 def ricerca_osservatore_nomecognome(self, nome, cognome):
     lista_osservatori_salvata = self._load()
     for osservatore_dict in lista_osservatori_salvata:
         if osservatore_dict["nome"] == nome and osservatore_dict["cognome"] == cognome:
             return self._from_dict(osservatore_dict)
     return None
+
 
 def rimuovi_osservatore(self):
     lista_osservatori_salvata = self._load()
