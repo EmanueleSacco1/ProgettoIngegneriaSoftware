@@ -53,7 +53,7 @@ class Ui_AreaRiservataAmministratore(object):
         self.pushButton_3.setText(_translate("AreaRiservataAmministratore", "Assistenti disponibili"))
         self.pushButton_4.setText(_translate("AreaRiservataAmministratore", "Aggiorna storico"))
         self.pushButton_5.setText(_translate("AreaRiservataAmministratore", "Assegnazione gara"))
-        self.pushButton_6.setText(_translate("AreaRiservataAmministratore", "Modifica associato"))
+        self.pushButton_6.setText(_translate("AreaRiservataAmministratore", "Modifica utente"))
         self.pushButton_7.setText(_translate("AreaRiservataAmministratore", "Visualizza profilo"))
         self.label.setText(_translate("AreaRiservataAmministratore", "AREA AMMINISTRATORE"))
         self.pushButton_8.setText(_translate("AreaRiservataAmministratore", "Escludi per preclusioni"))
