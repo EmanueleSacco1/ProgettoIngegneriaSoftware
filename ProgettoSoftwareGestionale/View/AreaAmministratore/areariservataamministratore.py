@@ -1,24 +1,35 @@
 from PyQt6 import QtCore, QtGui, QtWidgets
 
-def create_push_button(parent, geometry, object_name):
-    button = QtWidgets.QPushButton(parent=parent)
-    button.setGeometry(geometry)
-    button.setObjectName(object_name)
-    return button
-
 class Ui_AreaRiservataAmministratore(object):
     def setupUi(self, AreaRiservataAmministratore):
         AreaRiservataAmministratore.setObjectName("AreaRiservataAmministratore")
-        AreaRiservataAmministratore.resize(890, 562)
-        self.pushButton = create_push_button(AreaRiservataAmministratore, QtCore.QRect(240, 100, 180, 90), "pushButton")
-        self.pushButton_2 = create_push_button(AreaRiservataAmministratore, QtCore.QRect(460, 100, 180, 90), "pushButton_2")
-        self.pushButton_3 = create_push_button(AreaRiservataAmministratore, QtCore.QRect(240, 230, 180, 90), "pushButton_3")
-        self.pushButton_4 = create_push_button(AreaRiservataAmministratore, QtCore.QRect(460, 230, 180, 90), "pushButton_4")
-        self.pushButton_5 = create_push_button(AreaRiservataAmministratore, QtCore.QRect(240, 360, 180, 90), "pushButton_5")
-        self.pushButton_6 = create_push_button(AreaRiservataAmministratore, QtCore.QRect(460, 360, 180, 90), "pushButton_6")
-        self.pushButton_7 = create_push_button(AreaRiservataAmministratore, QtCore.QRect(350, 460, 180, 90), "pushButton_7")
+        AreaRiservataAmministratore.resize(766, 547)
+        icon = QtGui.QIcon()
+        icon.addPixmap(QtGui.QPixmap("../download.png"), QtGui.QIcon.Mode.Normal, QtGui.QIcon.State.Off)
+        AreaRiservataAmministratore.setWindowIcon(icon)
+        self.pushButton = QtWidgets.QPushButton(parent=AreaRiservataAmministratore)
+        self.pushButton.setGeometry(QtCore.QRect(150, 80, 180, 70))
+        self.pushButton.setObjectName("pushButton")
+        self.pushButton_2 = QtWidgets.QPushButton(parent=AreaRiservataAmministratore)
+        self.pushButton_2.setGeometry(QtCore.QRect(150, 180, 180, 70))
+        self.pushButton_2.setObjectName("pushButton_2")
+        self.pushButton_3 = QtWidgets.QPushButton(parent=AreaRiservataAmministratore)
+        self.pushButton_3.setGeometry(QtCore.QRect(150, 280, 180, 70))
+        self.pushButton_3.setObjectName("pushButton_3")
+        self.pushButton_4 = QtWidgets.QPushButton(parent=AreaRiservataAmministratore)
+        self.pushButton_4.setGeometry(QtCore.QRect(420, 180, 180, 70))
+        self.pushButton_4.setObjectName("pushButton_4")
+        self.pushButton_5 = QtWidgets.QPushButton(parent=AreaRiservataAmministratore)
+        self.pushButton_5.setGeometry(QtCore.QRect(420, 80, 180, 70))
+        self.pushButton_5.setObjectName("pushButton_5")
+        self.pushButton_6 = QtWidgets.QPushButton(parent=AreaRiservataAmministratore)
+        self.pushButton_6.setGeometry(QtCore.QRect(420, 280, 180, 70))
+        self.pushButton_6.setObjectName("pushButton_6")
+        self.pushButton_7 = QtWidgets.QPushButton(parent=AreaRiservataAmministratore)
+        self.pushButton_7.setGeometry(QtCore.QRect(150, 380, 180, 70))
+        self.pushButton_7.setObjectName("pushButton_7")
         self.label = QtWidgets.QLabel(parent=AreaRiservataAmministratore)
-        self.label.setGeometry(QtCore.QRect(320, 30, 331, 51))
+        self.label.setGeometry(QtCore.QRect(250, 20, 341, 41))
         font = QtGui.QFont()
         font.setFamily("MS Sans Serif")
         font.setPointSize(15)
@@ -27,6 +38,9 @@ class Ui_AreaRiservataAmministratore(object):
         font.setWeight(75)
         self.label.setFont(font)
         self.label.setObjectName("label")
+        self.pushButton_8 = QtWidgets.QPushButton(parent=AreaRiservataAmministratore)
+        self.pushButton_8.setGeometry(QtCore.QRect(420, 380, 180, 70))
+        self.pushButton_8.setObjectName("pushButton_8")
 
         self.retranslateUi(AreaRiservataAmministratore)
         QtCore.QMetaObject.connectSlotsByName(AreaRiservataAmministratore)
@@ -42,6 +56,8 @@ class Ui_AreaRiservataAmministratore(object):
         self.pushButton_6.setText(_translate("AreaRiservataAmministratore", "Modifica associato"))
         self.pushButton_7.setText(_translate("AreaRiservataAmministratore", "Visualizza profilo"))
         self.label.setText(_translate("AreaRiservataAmministratore", "AREA AMMINISTRATORE"))
+        self.pushButton_8.setText(_translate("AreaRiservataAmministratore", "Escludi per preclusioni"))
+
 
 if __name__ == "__main__":
     import sys
@@ -51,3 +67,5 @@ if __name__ == "__main__":
     ui.setupUi(AreaRiservataAmministratore)
     AreaRiservataAmministratore.show()
     sys.exit(app.exec())
+
+
