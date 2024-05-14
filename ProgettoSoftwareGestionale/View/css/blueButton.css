@@ -1,0 +1,22 @@
+QPushButton{
+ background-color:rgb(104, 194, 253);
+ border-style: solid;
+ border-radius:16px;
+color: rgb(255, 255, 255);
+	font: 13pt "Lato";
+}
+
+QPushButton::hover{
+
+
+	border-color : rgb(15, 138, 204);
+	color: white;
+border-width:0;
+}
+
+QPushButton::pressed{
+	border-color:rgb(104, 194, 253);
+	border-width:2;
+	background-color : white;
+	color:rgb(104, 194, 253);
+}
